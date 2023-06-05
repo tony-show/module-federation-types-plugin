@@ -71,7 +71,7 @@ var ModuleFederationTypesPlugin = /** @class */ (function () {
             throw new Error('Please set your app name of ModuleFederationPlugin in name option');
         }
         this.name = options.name;
-        this.typeOut = options.typeOut ? "".concat(options.typeOut, "/").concat(options.name, ".d.ts") : "./types/".concat(options.name, ".d.ts");
+        this.typeOut = options.outDir ? "".concat(options.outDir, "/").concat(options.name, ".d.ts") : "./types/".concat(options.name, ".d.ts");
         this.exposes = options.exposes || undefined;
         this.remotes = options.remotes || undefined;
         this.remoteTypesDir = options.remoteTypesDir || path.resolve(__dirname, '..', '..', 'src', 'microfrontends', 'types');

@@ -10,7 +10,7 @@ const asyncRmdir = util.promisify(fs.rmdir);
 
 interface PluginOptions {
   name: string
-  typeOut?: string
+  outDir?: string
   exposes?: Record<string, string>
   remotes?: Record<string, string>
   remoteTypesDir?: string
@@ -32,7 +32,7 @@ class ModuleFederationTypesPlugin {
       throw new Error('Please set your app name of ModuleFederationPlugin in name option');
     }
     this.name = options.name;
-    this.typeOut = options.typeOut ? `${options.typeOut}/${options.name}.d.ts` : `./types/${options.name}.d.ts`;
+    this.typeOut = options.outDir ? `${options.outDir}/${options.name}.d.ts` : `./types/${options.name}.d.ts`;
     this.exposes = options.exposes || undefined
     this.remotes = options.remotes || undefined
     this.remoteTypesDir = options.remoteTypesDir || path.resolve(__dirname, '..', '..', 'src', 'microfrontends', 'types')

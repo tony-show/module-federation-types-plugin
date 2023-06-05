@@ -13,7 +13,7 @@ In addition, the plugin allows you to upload type declaration files (.d.ts) from
 |Name|Type|Default|Description|
 |:--:|:--:|:-----:|:----------|
 |**`name`**|`String`|required option|Name of your app (like `name` option in ModuleFederation)|
-|**`typeOut`**|`String`|``./types/{name}.d.ts``|The path where the generated type declaration file will be saved in the project build folder (for the current application)|
+|**`outDir`**|`String`|``types``|The path where the generated type declaration file will be saved in the project build folder (for the current application)|
 |**`exposes`**|`Object`|`undefined`|The object `exposes` the entities you are sharing (like `exposes` option in ModuleFederation)|
 |**`remotes`**|`Object`|`undefined`|The object `remotes` with url adreses to remoteEntry files of your microfrontends (like `remotes` option in ModuleFederation)|
 |**`remoteTypesDir`**|`String`|`../../src/microfrontends/types`|The path to which the type declarations (.d.ts) files of your microfronts specified in the `remotes` option will be downloaded|
@@ -64,7 +64,7 @@ const remotes = export const prodRemotes = {
     }),
     new ModuleFederationTypesPlugin({
       name: appName,
-      typeOut: `./types/${appName}.d.ts`,
+      outDir: `./types`,
       exposes: exposes,
       remotes: remotes,
       remoteTypesDir: './src/types',
