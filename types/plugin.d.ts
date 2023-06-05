@@ -12,7 +12,7 @@ declare class ModuleFederationTypesPlugin {
 
 type PluginOptions = {
   name: string
-  typeOut?: string
+  outDir?: string
   exposes?: Record<string, string>
   remotes?: Record<string, string>
   remoteTypesDir?: string
