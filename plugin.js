@@ -109,14 +109,9 @@ var ModuleFederationTypesPlugin = /** @class */ (function () {
         }
         /* Get Remotes */
         if (this.remotes) {
-            var remotesUrl = Object.values(this.remotes).filter(function (remoteUrl) {
-                var hostRgx = new RegExp("^".concat(_this.name, "@"));
-                var isHostUrl = hostRgx.test(remoteUrl);
-                return !isHostUrl;
-            });
-            console.log('REMOTES -->', remotesUrl);
+            console.log('REMOTES -->', this.remotes);
             var typesRemotes_1 = [];
-            remotesUrl.forEach(function (remote) {
+            Object.values(this.remotes).forEach(function (remote) {
                 var typeRemote = remote.replace(/^(.+)@(https?)(.+\/)[^/].+$/, '$2$3types/$1.d.ts');
                 typesRemotes_1.push(typeRemote);
             });
