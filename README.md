@@ -48,7 +48,7 @@ const remotes = export const prodRemotes = {
           options: {
             compilerOptions: {
               declaration: true, // generate type declaration files for all project
-              declarationDir: 'types', // This folder with genereted .d.ts files for all project may be delete with option cleareOnStart in ModuleFederationTypesPlugin after build
+              declarationDir: 'types', // This folder with generated .d.ts files for all project may be delete with option clearOnStart in ModuleFederationTypesPlugin after build
             },
           },
         },
