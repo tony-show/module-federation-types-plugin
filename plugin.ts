@@ -73,14 +73,9 @@ class ModuleFederationTypesPlugin {
 
     /* Get Remotes */
     if (this.remotes) {
-      const remotesUrl = Object.values(this.remotes).filter((remoteUrl) => {
-        const hostRgx = new RegExp(`^${this.name}@`)
-        const isHostUrl = hostRgx.test(remoteUrl)
-        return !isHostUrl
-      })
-      console.log('REMOTES -->', remotesUrl);
+      console.log('REMOTES -->', this.remotes);
       const typesRemotes = []
-      remotesUrl.forEach((remote: string) => {
+      Object.values(this.remotes).forEach((remote: string) => {
         const typeRemote = remote.replace(/^(.+)@(https?)(.+\/)[^/].+$/, '$2$3types/$1.d.ts')
         typesRemotes.push(typeRemote)
       })

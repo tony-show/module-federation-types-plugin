@@ -1,6 +1,6 @@
 {
   "name": "module-federation-types-plugin",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "This plugin merges declaration asset files from common microfrontend modules specified in the exposes object for the ModuleFederation plugin and created using the generated Webpack ts-loader into one declaration file. In addition, the plugin allows you to load declaration type files from the specified microfrontend URLs specified in the remotes object for the ModuleFederation plugin.",
   "keywords": [
     "module federation",
